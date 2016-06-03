@@ -50,30 +50,22 @@ AMA.
 
 # WHAT'S THIS TALK ABOUT?
 
+This talk in a nutshell:
+
 -> *Use your Linux init system to run your Node.js apps* <-
 -> *It's easy, powerful and the tooling is great!* <-
 
-- We'll use Linux & systemd to do all the things PM2 does for you:
-  - Process management
-    - Restarting on crash or reboot
-  - Logs
-  - Clustering
-
-- I believe we should all know more about our production environment (Linux)
-- The goal of this talk is to show how simple and easy this stuff is!
-- You can do all of this in a Linux VM if you have a Mac
-- I run Arch Linux, which uses systemd, so I'm not using a VM today
-
-- This talk will be mostly demo, but I'll share the config so you can copy pasta
-- I am covering a lot, so I'll move fast and not explain everything
-  - I'll provide links for further reading!
+- I'll talk about PM2 as a reference case
+- Then I'll show you hands-on how to achieve the same things with systemd
+- This talk will be mostly demo
+- I will move quite quickly (sorry) but the final result will be available to copy-paste!
 
 ---
 
 # PM2
 
-- I'll be referring a lot to PM2 because everyone knows it.
-- Most of you probably use it in production; or something like forever, mon or nodemon.
+- I'll be referring a lot to PM2 because everyone knows it
+- Most of you probably use it in production; or something like forever, mon or nodemon
 - _Please note_ that I have nothing against PM2 or any of these tools!
 
 Why is PM2 so popular? Because it makes the following very easy:
@@ -110,8 +102,6 @@ Why learn Linux instead of sticking to PM2 or similar?
 - Linux has been doing this for years
 - Most modern distros use systemd as the init system
 
--> ## In this talk we'll learn to do all that PM2 can do, with systemd <-
-
 ---
 
 # SAMPLE APP
@@ -126,9 +116,6 @@ Why learn Linux instead of sticking to PM2 or similar?
   - A version of Linux with systemd \*
   - Node installed
   - Redis installed
-
-- If you get lost in the following systemd stuff, fear not!
-- I'll provide links to explainers and stuff you can copy pasta
 
 
 
@@ -176,7 +163,7 @@ Why learn Linux instead of sticking to PM2 or similar?
 
 ---
 
-# SYSTEMD DEPENDENCIES - Requires=
+# SYSTEMD DEPENDENCIES - Wants=
 
 - Use `Wants=` in `[Unit]` section of unit files to declare dependencies
 - Starting this unit will trigger wanted units to be started also
