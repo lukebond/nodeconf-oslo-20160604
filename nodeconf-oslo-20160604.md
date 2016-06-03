@@ -333,7 +333,7 @@ Why learn Linux instead of sticking to PM2 or similar?
     After=syslog.target network.target nss-lookup.target
 
     [Service]
-    ExecStart=/usr/bin/balance -f 9000 127.0.0.1:9001 127.0.0.1:9002 127.0.0.1:
+    ExecStart=/usr/bin/balance -f 9000 127.0.0.1:9001 127.0.0.1:9002 127.0.0.1:9003
 
     [Install]
     WantedBy=multi-user.target
