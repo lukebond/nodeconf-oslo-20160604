@@ -353,15 +353,17 @@ Why learn Linux instead of sticking to PM2 or similar?
 
 # WHERE TO FROM HERE?
 
-- This is basic stuff
+- This is just the basics of systemd
+  - Despite approaching feature-parity with PM2
 - Try it a few times on your own and you'll see how easy it is
 - Can be endlessly customised
 - It should be easy to build something dynamic on top of this
+  - As opposed to hardcoded ports in `balance.service`
 - Containers!
   - Normally I'd do all this with containers
   - I left it out today to reduce the number of new things introduced
-  - It makes a number of things easier about what we're doing here
-  - Talk to me about containers if you're interested!
+  - It makes a number of things easier
+  - Talk to me about containers, Node.js & systemd if you're interested!
 
 ---
 
@@ -397,17 +399,31 @@ Why learn Linux instead of sticking to PM2 or similar?
   _https://www.youtube.com/watch?v=hiW8eIdcRgo&list=PLlh6TqkU8kg_3FpXLlHMnoVqKZysIzXlK&index=6_
 - Videos from systemd conf 2015:
   _https://www.youtube.com/channel/UCvq_RgZp3kljp9X8Io9Z1DA_
+- systemd man pages:
+  _https://www.freedesktop.org/software/systemd/man/systemd.unit.html_
+  _https://www.freedesktop.org/software/systemd/man/systemd.service.html_
+- Slides presented with *mdp*:
+  _https://github.com/visit1985/mdp_
 
 ---
 
 # THANKS!
 
-- Any questions, contact me:
-  - Twitter: @lukeb0nd
-  - Email: luke@yld.io
-  - "lukebond" on GitHub
 
-Or come and say hi today!
+
+
+
+-> Thanks for listening! Go and read the repo and play. <-
+
+-> Any questions, contact me: <-
+
+
+-> ## @lukeb0nd <-
+
+-> ## luke@yld.io <-
+
+
+-> Or come and say hi today! <-
 
 ---
 
