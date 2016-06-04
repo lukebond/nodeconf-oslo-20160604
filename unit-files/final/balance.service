@@ -1,0 +1,9 @@
+[Unit]
+Description=Balance - Simple TCP Load Balancer
+After=syslog.target network.target nss-lookup.target
+
+[Service]
+ExecStart=/usr/bin/balance -f 9000 127.0.0.1:9001 127.0.0.1:9002 127.0.0.1:9003
+
+[Install]
+WantedBy=multi-user.target

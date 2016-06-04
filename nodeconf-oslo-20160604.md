@@ -60,6 +60,13 @@ This talk in a nutshell:
 - This talk will be mostly demo
 - I will move quite quickly (sorry) but the final result will be available to copy-paste!
 
+
+
+
+-> ## All unit files in this talk can be found here, along with the slides: <-
+
+-> _https://github.com/lukebond/nodeconf-oslo-20160604_ <-
+
 ---
 
 # PM2
@@ -70,9 +77,9 @@ This talk in a nutshell:
 
 Why is PM2 so popular? Because it makes the following very easy:
 
-- Process management
-- Log management
-- Magic/seamless sharing of ports
+1. Process management
+2. Log management
+3. Magic/seamless sharing of ports
 
 PM2 has great UX too. It's a powerful tool.
 
@@ -88,7 +95,7 @@ Why learn Linux instead of sticking to PM2 or similar?
 - Impress your friends!
 - Learn that you don't need a process monitor
 - Deploy applications that any Linux sysadmin outside the Node.js world will understand
-- systemd is now the standard init system
+- systemd is now more or less the standard init system
 
 ---
 
@@ -187,12 +194,10 @@ Why learn Linux instead of sticking to PM2 or similar?
     $ systemctl restart demo-api-redis@1
 
 - Note that now Redis gets started too!
-- I'm using Redis from my OS package manager, which provides a unit file
-  - I've put it in the repository if you want it
 
 ---
 
-# HANDLING CRASHES, RESTARTS, ETC.
+# HANDLING CRASHES, RESTARTS, ETC. (1/3)
 
 - Let's kill the node process and see what happens:
 
@@ -224,7 +229,7 @@ Why learn Linux instead of sticking to PM2 or similar?
 
 ---
 
-# LOGS
+# LOGS (2/3)
 
 - systemd has a powerful tool for working with logs for all services: `journalctl`
 - To scroll through logs for a unit or service:
@@ -296,7 +301,7 @@ Why learn Linux instead of sticking to PM2 or similar?
 
 ---
 
-# SIMPLE LOAD BALANCING WITH balance
+# SIMPLE LOAD BALANCING WITH balance (3/3)
 
 - `balance` is a simple, light-weight load balancer
 
@@ -342,14 +347,13 @@ Why learn Linux instead of sticking to PM2 or similar?
 
 - This is just the basics of systemd
   - Despite approaching feature-parity with PM2
-- Try it a few times on your own and you'll see how easy it is
-- Can be endlessly customised
 - It should be easy to build something dynamic on top of this
   - As opposed to hardcoded ports in `balance.service`
+- SSL termation, hooking up to external load balancers, etc. I'll leave to you
 - Containers!
   - Normally I'd do all this with containers
+    - Using *rkt* or *runc* because Docker & systemd sometimes don't play nicely together
   - I left it out today to reduce the number of new things introduced
-  - It makes a number of things easier
   - Talk to me about containers, Node.js & systemd if you're interested!
 
 ---
@@ -357,16 +361,11 @@ Why learn Linux instead of sticking to PM2 or similar?
 # CONCLUSION
 
 - Learn to use systemd for your Linux production machines
-- You don't need a process monitor
-  - What starts your process monitor, after all?
-- Use my unit files as a starting point to build your production environments
-- You will be using standard Linux tools any sysadmin will understand
-- Your application will be portable across environments
-- You will learn about Linux, where your app will be running in production
-- The tools are mature and powerful
+- Use my unit files as a starting point
 - systemd has a learning curve but it isn't difficult
-- I've only skimmed the surface of what you can do
-- Go forth and learn!
+- The tools are mature and powerful
+- You'll realise that you don't need a process monitor
+  - What starts your process monitor, after all?
 
 ## LINKS
 
@@ -411,12 +410,3 @@ Why learn Linux instead of sticking to PM2 or similar?
 
 
 -> Or come and say hi today! <-
-
----
-
-TODO:
-
-cut to 20mins
-better explain the pain it solves
-align figlet header for resolution
-make PDF from slides.com just in case!

@@ -1,0 +1,17 @@
+[Unit]
+Description=HTTP Hello World
+After=network.target
+Wants=redis.service
+
+[Service]
+Environment=REDIS_HOST=localhost
+Environment=LISTEN_PORT=900%i
+User=luke
+WorkingDirectory=/home/luke/Development/demo-api-redis
+ExecStart=/usr/bin/node index.js
+Restart=always
+RestartSec=500ms
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target
